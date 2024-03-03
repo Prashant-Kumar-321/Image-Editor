@@ -1,20 +1,20 @@
-const fileInput = document.querySelector(".file-input"),
-filterOptions = document.querySelectorAll(".filter button"),
-filterName = document.querySelector(".filter-info .name"),
-filterValue = document.querySelector(".filter-info .value"),
-filterSlider = document.querySelector(".slider input"),
-rotateOptions = document.querySelectorAll(".rotate button"),
-previewImg = document.querySelector(".preview-img img"),
-resetFilterBtn = document.querySelector(".reset-filter"),
-chooseImgBtn = document.querySelector(".choose-img"),
-saveImgBtn = document.querySelector(".save-img");
+const fileInput = document.querySelector(".file-input"); 
+const filterOptions = document.querySelectorAll(".filter button"); 
+const filterName = document.querySelector(".filter-info .name"); 
+const filterValue = document.querySelector(".filter-info .value"); 
+const filterSlider = document.querySelector(".slider input"); 
+const rotateOptions = document.querySelectorAll(".rotate button"); 
+const previewImg = document.querySelector(".preview-img img"); 
+const resetFilterBtn = document.querySelector(".reset-filter"); 
+const chooseImgBtn = document.querySelector(".choose-img"); 
+const saveImgBtn = document.querySelector(".save-img");
 
 let brightness = "100", saturation = "100", inversion = "0", grayscale = "0";
 let rotate = 0, flipHorizontal = 1, flipVertical = 1;
 
 const loadImage = () => {
     let file = fileInput.files[0];
-    if(!file) return;
+    if(!file) return;     // No file is choosen 
     previewImg.src = URL.createObjectURL(file);
     previewImg.addEventListener("load", () => {
         resetFilterBtn.click();
